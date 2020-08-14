@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>            
+            button:hover{
+                color: hotpink;
+            }
+            th{
+                width: 200px;
+                border-bottom: 1px solid black;
+                text-align: left;
+            }
+            .index{
+                border: 1px solid green;
+                padding-left: 3px;
+                padding-right: 3px;
+            }            
+        </style>
+        <script>
+            function music(mName){
+                var a = document.getElementById("play");
+                a.src=mName;               
+            }
+        </script>
+
+    </head>
+    <body>
+        <h2>오디오 재생 리스트</h2>
+        <hr>
+        <table >
+            <audio id="play" autoplay src=""></audio>
+            <tr><td class="index">1</td><th>애국가</th>
+                <td><button onclick="music('video/애국가.mp3')">재생</button></td>
+                <td><button onclick="music('')">중지</button></td></tr>
+            <tr><td class="index">2</td><th>조국찬가</th>
+                <td><button onclick="music('video/랩앵커 R.A.C 여섯번째 곡 음원공개!!.mp3')">재생</button></td>
+                <td><button onclick="music('')">중지</button></td></tr>
+            <tr><td class="index">3</td><th>KCM</th>
+                <td><button onclick="music('video/KCM - 사랑과 우정사이.mp3')">재생</button></td>
+                <td><button onclick="music('')">중지</button></td></tr>
+        </table>
+    </body>
+</html>
