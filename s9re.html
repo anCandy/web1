@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style></style>
+<script>
+    var text=["빨간자전거를 타고 서울, 대전, 대구, 부산 찍고, 목포, 인천을 거쳐 달린다",
+          "한국 고전 50권, 외국 고전 50권을 읽는 목표",
+          "아침에는 수영을 배우고, 점심먹고 자전거 훈련 30KM, 저녁에는 10KM 달리기 하기",
+          "문제가 많고 잘 정리된 자바스크립트 책을 구입하여 본격적으로 연습문제 풀기"];    
+    var div;
+    var liArray;
+
+    function init(){
+        liArray = document.getElementsByTagName("li");
+        div = document.getElementById("commentDiv");
+        for(var i=0;liArray.length;i++){
+            liArray[i].addEventListener("mouseover", over);
+            liArray[i].addEventListener("mouseout", out);
+        }
+    }    
+    function over(e){
+        
+        var found;
+        for(var i=0;i<liArray.length;i++){
+            if(e.target == liArray[i]){
+                found =i;
+            }
+        }
+        setComment(text[found], e);
+    }
+    function setComment(text, e){
+        
+        div.innerHTML = text;
+        div.style.position="absolute";
+        div.style.backgroundColor="aliceblue";
+        div.style.border= "1px solid yellowgreen";
+        div.style.width= "150px";
+        div.style.width="100px";
+        div.style.visibility="visible";
+        div.style.left = e.clientX + "px";
+        div.style.top = e.clientY + "px";
+
+    }
+    function out(e){
+        div.style.visibility="hidden";
+    }
+    
+</script>
+</head>
+<body onload="init()">
+    <h3>아이템에 마우스를 올리면 설명 출력</h3>
+<hr>
+<p>여름 방학 때 하고 싶은 것들</p>
+<ul style="width: 20%;">
+	<li>자전거로 대한민국 일주</li>
+	<li>책 100권 읽기</li>
+	<li>철인 3종 경기 준비</li>
+	<li>자바스크립트 정복</li>
+</ul> 
+<div id="commentDiv" style="position:absolute"></div>
+<p>오류사진</p>
+<img src="오류.JPG">
+
+</body>
+</html>
