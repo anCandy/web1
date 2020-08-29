@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+    button{
+        margin-right: 20px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        width: 50px;
+        text-align: center;
+    }
+    input:hover{
+        background-color: aliceblue;
+    }
+    
+</style>
+<script>
+    var buttonArray;
+    var input;
+    var exp="";
+    var p;
+    
+    function init(){
+        buttonArray = document.getElementsByTagName("button");
+        input = document.getElementById("input");
+        for(i=0;i<buttonArray.length;i++)
+            buttonArray[i].addEventListener("click", click);
+
+        input.addEventListener("keydown", press);
+        p=document.getElementById("p"); 
+
+    }
+    function checker(value){
+        
+        if(exp==0)
+            exp="";                
+        if(isNaN(value))
+            operator(value);
+        else
+            num(value);
+
+        input.value = exp;     
+        p.innerHTML=value;        
+    }
+    function press(e){ 
+        //input.value="";   
+        checker(e.key);           
+    }
+    function click(e){
+        checker(e.target.innerHTML);       
+    }
+    function num(value){
+        exp+=value;
+    }
+    function operator(value){       
+        switch(value){
+            case "NONE":break;
+            case "Backspace":
+            case "BACK": 
+                expDelete();break;
+            case "Enter":
+            case "=" : 
+                calc();break;
+            case "C":
+            case "CE":
+                clear();break;
+            default:
+                exp+=value;
+    }
+
+    }
+    function expDelete(){
+        exp = exp.slice(0, exp.length-1);
+    }
+    function calc(){
+        exp = eval(exp);
+    }
+    function clear(){
+        exp=0;
+    }
+</script>
+</head>
+<body onload="init()">
+    <h3>계산기 만들기</h3>
+    <hr>    
+    
+    <table>
+        <input type="text" id="input" value="0"><br>
+        <tr><button type="button">BACK</button type="button"><button>CE</button><button type="button">C</button><button type="button">=</button></tr><br>
+        <tr><button type="button">7</button><button type="button">8</button><button type="button">9</button><button type="button">/</button></tr><br>
+        <tr><button type="button">4</button><button type="button">5</button><button type="button">6</button><button type="button">*</button></tr><br>
+        <tr><button type="button">1</button><button type="button">2</button><button type="button">3</button><button type="button">-</button></tr><br>
+        <tr><button type="button">0</button><button type="button">+</button><button type="button">NONE</button><button type="button">NONE</button></tr>
+    </table>
+    <p id="p">입력</p>
+</body>
+</html>
