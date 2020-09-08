@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+      div{
+        background-color: aliceblue;
+        width: 100px;
+        border: 1px solid green;
+    }
+</style>
+<script>
+    var div=null;
+    var timerID=null;
+    function init(){
+        div = document.getElementById("a");
+        timerID= window.setInterval("realTime()", 1000);
+    }
+    function realTime(){
+        var date = new Date();
+        div.innerHTML = date.toLocaleTimeString();
+    }
+    function stopNstart(){
+        if(timerID == null)
+            timerID= window.setInterval("realTime()", 1000);
+        else{
+            clearInterval(timerID);
+            timerID=null;
+        }
+       
+    }
+</script>
+</head>
+<body onload="init()">
+    <h2>dfdsf</h2>
+    <hr>
+    <div id="a" onclick="stopNstart()"></div>
+</body>
+</html>
