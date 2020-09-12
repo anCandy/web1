@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style></style>
+    <script></script>
+</head>
+
+<body>
+    <h2>타이머</h2>
+    <hr>
+    <span id="timer">타이머 카운트</span><br>
+    <button type="button" id="start" onclick="start(event)">start</button>
+    <button type="button" id="stop" onclick="stop(event)">stop</button>
+    <script>
+        var worker = new Worker("timer.js");
+        var span = document.getElementById("timer");
+
+        worker.onmessage = function (e) {
+                span.innerHTML = e.data;
+            }
+
+        function start(e) {
+            if (worker != null)
+                worker.postMessage("start");
+            else                
+                worker = new Worker("timer.js");
+        }
+        function stop(e) {
+            worker.postMessage("stop");
+            worker = null;
+        }
+    </script>
+</body>
+
+</html>
