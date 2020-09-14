@@ -23,8 +23,10 @@
         function start(e) {
             if (worker != null)
                 worker.postMessage("start");
-            else                
+            else{                
                 worker = new Worker("timer.js");
+                worker.postMessage("start");
+            }
         }
         function stop(e) {
             worker.postMessage("stop");
