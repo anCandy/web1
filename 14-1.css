@@ -1,0 +1,37 @@
+div#paint{
+    border: 1px dotted powderblue;
+    width: 600px;
+    height: 60px;
+}
+.palette,.lineWidth,.cursor{
+    display: inline-block;
+}
+table.palette{
+    background-color: lightgray;
+    width: 240px;
+    height: 60px;
+}
+td.palette{
+    width: 20px;
+    height: 20px;  
+    margin-bottom: 3px;     
+}
+
+table.lineWidth{
+    width: 50px;        
+    height: 60px;
+}  
+td.lineWidth,div.lineWidth{
+    width: 50px;
+    height: 20px;   
+}
+
+table.cursor{
+    height: 60px;
+   
+}
+table.cursor td{
+    width: 100px;
+    text-align: right;
+   
+}

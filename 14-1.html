@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="14-1.css" type="text/css" rel="stylesheet">
+<script src="14-1.js"></script>
+</head>
+<body>
+    <h2>그림판입니다. 그림을 그려보세요.</h2>
+    <hr>
+    <div id="paint">
+        <table class="palette">
+            <tr>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: lightskyblue;">&nbsp;</div></td>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: red;">&nbsp;</div></td>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: black;">&nbsp;</div></td>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: rgb(0, 255, 200);">&nbsp;</div></td>
+
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: brown;">&nbsp;</div></td>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: rebeccapurple;">&nbsp;</div></td>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: yellowgreen;">&nbsp;</div></td>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: white;">&nbsp;</div></td>
+                <td class="palette"><input id="clickInputColor" type="color" style="cursor: pointer;" onchange="clickInputColor(event)"></td>
+            </tr>
+            <tr>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: green;">&nbsp;</div></td>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: purple;">&nbsp;</div></td>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: darkgoldenrod;">&nbsp;</div></td>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: darkolivegreen;">&nbsp;</div></td>
+ 
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: darkorange;">&nbsp;</div></td>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: lightpink;">&nbsp;</div></td>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: lightslategrey;">&nbsp;</div></td>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: wheat;">&nbsp;</div></td>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: white;">&nbsp;</div></td>
+                <td class="palette"><div name="Pcolor" style="cursor: pointer; background-color: white;">&nbsp;</div></td>                
+            </tr>
+        </table>        
+        <table class="lineWidth">
+            <tr>
+                <td><div>선굵기</div></td>
+            </tr>
+            <tr>
+                <td><input id="inputLineWidth" type="number" min="1" max="15" value="1" style="width: 40px;"></td>
+            </tr>
+        </table>        
+        <div style="display: inline-block;">
+            <span id="inputColor" style="background-color: black; display: inline-block; width: 50px; height: 60px;"></span>
+        </div>
+        <div style="display: inline-block;">
+            <input type="button" style="height: 60px;" value="clear" onclick="clear(event)">
+        </div>
+       <table class="cursor">
+           <tr><td><span id="x"></span></td></tr>
+           <tr><td><span id="y"></span></td></tr>
+       </table>
+    </div>
+    <canvas id="mycanvas" style="background-color: aliceblue;" width="600" height="500"></canvas>
+    
+</body>
+</html>
