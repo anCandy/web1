@@ -119,7 +119,7 @@ function win_chercker(){
 function timerWorker(e){
     var data = parseInt(e.data);
     if(data === 15){
-        audio_obj.sound_effect.src="./media/시계소리1.MP3";            
+        audio_obj.sound_effect.src="./media/시계소리1.mp3";            
         audio_obj.sound_effect.play();
         audio_obj.bgmAudio.volume=0.4;
     }else if(data === 10){
