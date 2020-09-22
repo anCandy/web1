@@ -1,0 +1,19 @@
+body{
+    background-color: green;
+}
+h2{
+    color: white;
+    text-align: center;
+}
+h3, li{
+    color: white;
+}
+.info{
+    width: 130px;
+    text-align: left;
+    background-color: pink;
+    font-size: 20px;
+}
+img{
+    margin: 35px 25px 35px 0px;
+}
