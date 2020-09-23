@@ -3,6 +3,7 @@ var tryNum=8, failNum=0;
 var answer_IdxList;
 var startButton;
 var answerImg;
+var boardImg;
 var imgArray=null;
 var selectable = false;
 var audio_obj=null;
@@ -12,7 +13,9 @@ window.onload = init;
 function init(){    
     answer_IdxList = new Array();
     answerImg = new Image(70,70);
+    boardImg = new Image(70,70);
     answerImg.src="./media/earth-removebg-preview.png"
+    boardImg.src="./media/moon-removebg-preview.png";
     startButton = document.getElementById("start");
     imgArray = document.getElementsByName("boardImg");
     audio_obj={
@@ -97,7 +100,7 @@ function checker(randNum){
 }
 function initImage(){
     for(var i=0;i<imgArray.length;i++){
-        imgArray[i].src="./media/moon-removebg-preview.png";
+        imgArray[i].src="boardImg.src";
         imgArray[i].style.border="";
     }
 }
